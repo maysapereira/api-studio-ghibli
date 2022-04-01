@@ -31,3 +31,10 @@ export async function update(filmes) {
         db.run('UPDATE Filmes SET nome_original=?, nome_em_português=?, ano_de_lançamento=?, gênero=?, direção=?, produção=?, roteiro=? WHERE id=?', [filmes.nome_original, filmes.nome_em_português, filmes.ano_de_lançamento, filmes.gênero, filmes.direção, filmes.produção, filmes.roteiro, filmes.id])
     })
 }
+
+export async function deleta(id) {
+    return openDB().then(db => {
+        return db.get('DELETE FROM Filmes WHERE id=?', [id])
+        .then(res=>res)
+    })
+}
