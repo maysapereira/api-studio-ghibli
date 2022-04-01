@@ -26,7 +26,7 @@ app.get('/filmes', async function(req, res){
     res.json(filmes)
 })
 
-app.get('/filmes', async function(req, res){
+app.get('/filme', async function(req, res){
     let filmes = await selectOne(req.body.id)
     res.json(filmes)
 })

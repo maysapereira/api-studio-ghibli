@@ -21,7 +21,7 @@ export async function select() {
 
 export async function selectOne(id) {
     return openDB().then(db => {
-        return db.one('SELECT * FROM Filmes WHERE id=?', [id])
+        return db.get('SELECT * FROM Filmes WHERE id=?', [id])
         .then(res=>res)
     })
 }
