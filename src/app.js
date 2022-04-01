@@ -18,5 +18,20 @@ app.post('/filmes', function(req, res){
     })
 })
 
+app.put('/filmes', function(req, res){
+    if(req.body && !req.body.id){
+        res.json({
+            "statusCode": 400,
+            "msg": "Você precisa informar um id"
+        })
+    } else {
+        update(req.body)
+        res.json({
+            "statusCode": 200,
+            "msg": "Filme atualizado com sucesso"
+        })
+    }
+})
+
 openDB()
 createTable()
