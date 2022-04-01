@@ -13,6 +13,8 @@
   </p>
 </p>
 
+![365-Filmes-Magia-Studio-Ghibli-Hayao-Miyazaki](https://user-images.githubusercontent.com/93635431/161331620-4f87f6aa-9ccd-45ff-86ca-e1884eb0c0ee.jpg)
+
 #### ⚠️  IMPORTANTE ⚠️ 
 
 A API está totalmente funcional e você pode testa-la seguindo os passos a seguir, mas ela não está finalizada. A API está em construção e será refatorada em breve.
