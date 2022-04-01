@@ -1,6 +1,6 @@
 import express from "express";
 import { openDB } from "./configDB.js";
-import createTable, { insert } from "./controller/filmes.js";
+import createTable, { insert, select, selectOne, update } from "./controller/filmes.js";
 
 const app = express()
 const port = 3000
@@ -21,7 +21,15 @@ app.post('/filmes', function(req, res){
 })
 
 //READ
+app.get('/filmes', async function(req, res){
+    let filmes = await select()
+    res.json(filmes)
+})
 
+app.get('/filmes', async function(req, res){
+    let filmes = await selectOne(req.body.id)
+    res.json(filmes)
+})
 
 //UPDATE
 app.put('/filmes', function(req, res){
