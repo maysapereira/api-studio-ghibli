@@ -12,7 +12,7 @@ app.listen(port, () => {
 app.use(express.json())
 
 //CREATE
-app.post('/filmes', function(req, res){
+app.post('/filmes', (req, res) => {
     insert(req.body)
     res.json({
         "statusCode":200,
@@ -32,7 +32,7 @@ app.get('/filme', async function(req, res){
 })
 
 //UPDATE
-app.put('/filmes', function(req, res){
+app.put('/filmes', (req, res) => {
     if(req.body && !req.body.id){
         res.json({
             "statusCode": 400,
