@@ -11,7 +11,9 @@
   "author": "Maysa Pereira",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "sqlite": "^4.0.25",
+    "sqlite3": "^5.0.2"
   },
   "type": "module",
   "devDependencies": {
