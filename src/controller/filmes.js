@@ -6,12 +6,14 @@ export default async function createTable() {
     })
 }
 
+//CREATE
 export async function insert(filmes) {
     openDB().then(db => {
         db.run('INSERT INTO Filmes (nome_original, nome_em_português, ano_de_lançamento, gênero, direção, produção, roteiro) VALUES (?,?,?,?,?,?,?)', [filmes.nome_original, filmes.nome_em_português, filmes.ano_de_lançamento, filmes.gênero, filmes.direção, filmes.produção, filmes.roteiro])
     })
 }
 
+//READ
 export async function select() {
     return openDB().then(db => {
         return db.all('SELECT * FROM Filmes')
@@ -26,12 +28,14 @@ export async function selectOne(id) {
     })
 }
 
+//UPDATE
 export async function update(filmes) {
     openDB().then(db => {
         db.run('UPDATE Filmes SET nome_original=?, nome_em_português=?, ano_de_lançamento=?, gênero=?, direção=?, produção=?, roteiro=? WHERE id=?', [filmes.nome_original, filmes.nome_em_português, filmes.ano_de_lançamento, filmes.gênero, filmes.direção, filmes.produção, filmes.roteiro, filmes.id])
     })
 }
 
+//DELETE
 export async function deleta(id) {
     return openDB().then(db => {
         return db.get('DELETE FROM Filmes WHERE id=?', [id])
