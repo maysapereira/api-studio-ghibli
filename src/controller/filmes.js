@@ -5,3 +5,9 @@ export default async function createTable() {
         db.exec('CREATE TABLE IF NOT EXISTS Filmes ( id INTEGER PRIMARY KEY, nome_original TEXT, nome_em_português TEXT, ano_de_lançamento INTEGER, gênero TEXT, direção TEXT, produção TEXT, roteiro TEXT )')
     })
 }
+
+export async function insert(filmes) {
+    openDB().then(db => {
+        db.run('INSERT INTO Filmes (nome_original, nome_em_português, ano_de_lançamento, gênero, direção, produção, roteiro) VALUES (?,?,?,?,?,?,?)', [filmes.nome_original, filmes.nome_em_português, filmes.ano_de_lançamento, filmes.gênero, filmes.direção, filmes.produção, filmes.roteiro])
+    })
+}
