@@ -14,7 +14,8 @@ app.use(express.json())
 app.post('/filmes', function(req, res){
     insert(req.body)
     res.json({
-        "statusCode":200
+        "statusCode":200,
+        "msg": "Filme adicionado com sucesso"
     })
 })
 
