@@ -11,6 +11,7 @@ app.listen(port, () => {
 
 app.use(express.json())
 
+//CREATE
 app.post('/filmes', function(req, res){
     insert(req.body)
     res.json({
@@ -19,6 +20,10 @@ app.post('/filmes', function(req, res){
     })
 })
 
+//READ
+
+
+//UPDATE
 app.put('/filmes', function(req, res){
     if(req.body && !req.body.id){
         res.json({
@@ -33,6 +38,8 @@ app.put('/filmes', function(req, res){
         })
     }
 })
+
+//DELETE
 
 openDB()
 createTable()
